@@ -1,24 +1,30 @@
 
+# React video janus example  
 
-
-## ref 
-https://www.npmjs.com/package/janus-videoroom-client 
+## REF  
+https://www.npmjs.com/package/janus-videoroom-client  
 ## Installing and starting development
-npm install
-npm start
-
+```bash
+npm install  
+npm start  
+```
 ## then go to  
-http://localhost:3000/
+http://localhost:3000/  
 
 # Usefull information  
-## on src/index.js find  
+## on src/index.js find   
 Create client without authentication  
+
+```js
 var client = new JanusClient({  
-  url: 'ws://janus_server_ip:janus_websocket_port' // set your own janus host and port
-});
+  url: 'ws://janus_server_ip:janus_websocket_port' // set your own janus host and port  
+});  
+```
 
 ## Register events connected, disconnected, error
 When **client.connect()** onConnected event occurs and client can create a session to janus server.
+
+```js
 client.onConnected(()=>{
     client.createSession().then((session)=>{
         ...
@@ -26,30 +32,37 @@ client.onConnected(()=>{
         ...
     })
 });
+```
 
 ## Call connect method
+```js
 client.connect();
+```
 ## Create a new janus session
+```js
 client.createSession().then((session)=>{
     ...
 });
+```
 ## Get feeds of some room (default-1234-janus-room)  
+```js
 session.videoRoom().getFeeds(room).then((feeds)=>{
     for(let feed of feeds) {
         ...
     }
 });
-
+```
 Each feed has an offer, in the **video-react-example** with take just the first feed if exists.  
 
 ## Then with room and feed we can subscribe to get the stream of that feed:
-
+```js
 session.videoRoom().listenFeed(room, feed).then((listenerHandle)=>{
     var offerSdp = listenerHandle.getOffer();
     ...
 });
-
+```
 ## So in the example app we start the negotiation like this if atleast one feed exists.
+```js
 session.videoRoom().listenFeed(room, feed).then((listenerHandle)=>{
 
     //Starting negotiation
@@ -89,3 +102,4 @@ session.videoRoom().listenFeed(room, feed).then((listenerHandle)=>{
     })
     // End of negotiation
 });
+```
