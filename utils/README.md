@@ -1,6 +1,6 @@
 # Util functions janus
 By default Janus serves a http API interface that can be use to comunicate to janus plugins and features.   
-The http api can be configured accesing the file: janus.transport.http.jcfg in /opt/janus/etc/janus/  
+The http api can be configured accesing the file: **/opt/janus/etc/janus/janus.transport.http.jcfg** 
 inside file are some kind of dictionary named "general" with some parameters like http port, or http base path, some other useful features.  
 ```bash
 general = {
