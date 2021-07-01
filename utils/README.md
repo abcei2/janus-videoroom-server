@@ -32,7 +32,7 @@ After allowing admin API, go to main jauns config file **janus.jcfg** and uncome
 ```bash  
 token_auth = true # Telling to enable the token_auth api,  and to tell your admin_secret that is an admin password   
 ```
-very important to do request to the admin API.
+it's very important to change an save the **admin_secret** to use admin API.
 ```bash  
 admin_secret = "janusoverlord"  # change janusoverlord to your own secret.  
 ```
@@ -48,8 +48,19 @@ general = {
 }
 ```
 
-Restart janu server to get the changes to work.
+Restart janus server to get the changes to work.  
 ### Janus admin  
+**Refer to : https://janus.conf.meetecho.com/docs/admin.html**
+
+In this admin API we can send some post request to manage the **Stored token based authentication mechanism**; create, or remove authorization token.
+**Refer to https://janus.conf.meetecho.com/docs/auth.html** in _Stored token based authentication mechanism_ section.  
+
+utils_request.py have the follow utils functions:
+```python
+def add_token(admin_secret, janus_token,plugins=["janus.plugin.videoroom"]):  #CREATE NEW TOKEN
+def remove_token(admin_secret, janus_token):  #REMOVE TOKEN
+def list_tokens(admin_secret):  #LIST ALLOWED TOKENS
+```
 
 
 ## Janu videoroom plugin
