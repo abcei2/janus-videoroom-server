@@ -5,12 +5,15 @@ class JanusVideoRoom extends React.Component {
     super(props);
     var video_id= this.props.video_id
     var audio_id= this.props.audio_id
+    var janus_props_session={
+      url: 'ws://207.246.118.54:8188',
+    }
     var JanusClient = require('janus-videoroom-client').Janus;
+    
+    if( this.props.token)
+      janus_props_session.token=this.props.token
 
-    var client = new JanusClient({
-      url: 'ws://207.246.118.54:8188'
-    });
-
+    client = new JanusClient(janus_props_session);
     var pc = null;
     var room = "1234";
     var config = {

@@ -9,10 +9,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <JanusVideoRoom video_id="video1" audio_id="audio1"/>
-    <JanusVideoRoom video_id="video2" audio_id="audio2"/>
-    <JanusVideoRoom video_id="video3" audio_id="audio3"/>
-    <JanusVideoRoom video_id="video4" audio_id="audio4"/>    
+    <JanusVideoRoom video_id="video1" audio_id="audio1" token="123456789"/>    
   
   </React.StrictMode>,
   document.getElementById('root')
