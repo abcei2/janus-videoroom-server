@@ -93,10 +93,10 @@ class JanusVideoRoom extends React.Component {
       console.log(evt.track.kind,evt.streams[0],audio_id,video_id)
       if (evt.track.kind === 'video') {
         if(!loaded){
+          loaded=true;
           console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
 
           document.getElementById(video_id).srcObject = evt.streams[0];
-          loaded=true;
         }
         
       } else if(evt.track.kind === 'audio') {
