@@ -1,10 +1,7 @@
 
 import React from 'react';
 class JanusVideoRoom extends React.Component {
-    constructor(props) {
-        super(props);
-        
-    }
+
     componentDidMount() {
         var video_id= this.props.video_id
         var audio_id= this.props.audio_id
