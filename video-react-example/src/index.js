@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import JanusVideoRoom from './JanusVideoRoomComponent';
+import JanusVideoRoom from './components/JanusVideoRoomComponent';
+// import SimpleVideoRoom from './components/SimpleVideoRoomComponent';
 import reportWebVitals from './reportWebVitals';
 
 

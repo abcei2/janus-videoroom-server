@@ -1,6 +1,5 @@
-
 import React from 'react';
-class JanusVideoRoom extends React.Component {
+class SimpleVideoRoom extends React.Component {
 
     componentDidMount() {
         var video_id= this.props.video_id
@@ -114,4 +113,4 @@ class JanusVideoRoom extends React.Component {
 }
 
 
-export default JanusVideoRoom;
+export default SimpleVideoRoom;
