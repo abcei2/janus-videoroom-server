@@ -64,3 +64,8 @@ def list_tokens(admin_secret):  #LIST ALLOWED TOKENS
 
 
 ## Janu videoroom plugin
+```python
+def start_session(janus_token=None):  # Return session_id
+def attach_to_plugin(session_id,janus_token=None,plugin="janus.plugin.videoroom"):  # returing handler_id
+def list_rooms(session_id, handler_id, janus_token=None)  # listing public rooms
+```
