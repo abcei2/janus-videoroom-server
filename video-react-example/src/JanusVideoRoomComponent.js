@@ -89,6 +89,7 @@ class JanusVideoRoom extends React.Component {
     });
 
     pc.addEventListener('track', function(evt) {
+      console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
       console.log(evt.track.kind,evt.streams[0],audio_id,video_id)
       if (evt.track.kind === 'video') {
         document.getElementById(video_id).srcObject = evt.streams[0];
