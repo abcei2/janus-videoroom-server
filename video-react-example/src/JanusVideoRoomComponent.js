@@ -103,7 +103,6 @@ class JanusVideoRoom extends React.Component {
     client.connect();   
   }
   componentDidMount() {
-    var $this = $(ReactDOM.findDOMNode(this));
     console.log("???")
     // set el height and width etc.
   }
