@@ -106,7 +106,7 @@ class JanusVideoRoom extends React.Component {
         return (
             <div id="media" height="400px" width="400px">
                 <h2>Media</h2>
-                <video id={this.props.video_id} autoPlay={true} controls></video>        
+                <video id={this.props.video_id} autoPlay={true} muted></video>        
                 <audio id={this.props.audio_id}  autoPlay={true}></audio>
             </div>
         )
