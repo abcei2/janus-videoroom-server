@@ -14,13 +14,18 @@ http://localhost:3000/
 # Usefull information  
 ## on src/index.js find   
 Create client without authentication  
-
 ```js
 var client = new JanusClient({  
   url: 'ws://janus_server_ip:janus_websocket_port' // set your own janus host and port  
 });  
 ```
-
+With Token based authentication
+```js
+var client = new JanusClient({
+    url: 'ws://janus_server_ip:janus_websocket_port' // set your own janus host and port  
+    token: 'yourToken'
+});
+```
 ## Register events connected, disconnected, error
 When **client.connect()** onConnected event occurs and client can create a session to janus server.
 
