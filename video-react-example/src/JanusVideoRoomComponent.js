@@ -13,7 +13,7 @@ class JanusVideoRoom extends React.Component {
     if( this.props.token)
       janus_props_session.token=this.props.token
 
-    client = new JanusClient(janus_props_session);
+    var client = new JanusClient(janus_props_session);
     var pc = null;
     var room = "1234";
     var config = {
