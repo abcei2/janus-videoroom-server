@@ -22,7 +22,7 @@ var client = new JanusClient({
 With Token based authentication
 ```js
 var client = new JanusClient({
-    url: 'ws://janus_server_ip:janus_websocket_port' // set your own janus host and port  
+    url: 'ws://janus_server_ip:janus_websocket_port', // set your own janus host and port  
     token: 'yourToken'
 });
 ```
