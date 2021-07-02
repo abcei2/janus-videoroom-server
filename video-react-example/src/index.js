@@ -6,10 +6,10 @@ import reportWebVitals from './reportWebVitals';
 
 
 
-
+var janus_webrtc_server='ws://207.246.118.54:8188'
 ReactDOM.render(
   <React.StrictMode>
-    <JanusVideoRoom video_id="video1" audio_id="audio1" token="123456789"/>    
+    <JanusVideoRoom video_id="video1" audio_id="audio1" token="123456789" room="1234" server={janus_webrtc_server}/>    
   
   </React.StrictMode>,
   document.getElementById('root')
