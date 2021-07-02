@@ -16,7 +16,7 @@ class JanusVideoRoom extends React.Component {
     var client = new JanusClient(janus_props_session);
     var pc = null;
     var room = "1234";
-    var loaded=false;
+    var not_loaded=true;
     var config = {
       sdpSemantics: 'unified-plan',
       // config.iceServers = [{urls: ['stun:stun.l.google.com:19302']}];
@@ -92,8 +92,8 @@ class JanusVideoRoom extends React.Component {
     pc.addEventListener('track', function(evt) {
       console.log(evt.track.kind,evt.streams[0],audio_id,video_id)
       if (evt.track.kind === 'video') {
-        if(!loaded){
-          loaded=true;
+        if(not_loaded){
+          loaded=false;
           console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
 
           document.getElementById(video_id).srcObject = evt.streams[0];
