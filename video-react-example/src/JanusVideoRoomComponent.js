@@ -88,13 +88,7 @@ class JanusVideoRoom extends React.Component {
       console.log("DISCONNECTED")
     });
 
-  
-
-
-  }
-  render() {
     pc.addEventListener('track', function(evt) {
-      console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
       console.log(evt.track.kind,evt.streams[0],audio_id,video_id)
       if (evt.track.kind === 'video') {
         document.getElementById(video_id).srcObject = evt.streams[0];
@@ -103,8 +97,11 @@ class JanusVideoRoom extends React.Component {
         document.getElementById(audio_id).srcObject = evt.streams[0];
       }
     });
-    
+    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+
     client.connect();   
+  }
+  render() {
     return (
       <div id="media" height="400px" width="400px">
         <h2>Media</h2>
