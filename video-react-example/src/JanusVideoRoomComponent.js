@@ -16,6 +16,7 @@ class JanusVideoRoom extends React.Component {
     var client = new JanusClient(janus_props_session);
     var pc = null;
     var room = "1234";
+    var loaded=false;
     var config = {
       sdpSemantics: 'unified-plan',
       // config.iceServers = [{urls: ['stun:stun.l.google.com:19302']}];
@@ -91,13 +92,18 @@ class JanusVideoRoom extends React.Component {
     pc.addEventListener('track', function(evt) {
       console.log(evt.track.kind,evt.streams[0],audio_id,video_id)
       if (evt.track.kind === 'video') {
-        document.getElementById(video_id).srcObject = evt.streams[0];
+        if(!loaded){
+          console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+
+          document.getElementById(video_id).srcObject = evt.streams[0];
+          loaded=true;
+        }
         
-      } else if(evt.track.kind === 'audio' && evt.streams[0]) {
+      } else if(evt.track.kind === 'audio') {
+     
         document.getElementById(audio_id).srcObject = evt.streams[0];
       }
     });
-    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
 
     client.connect();   
   }
