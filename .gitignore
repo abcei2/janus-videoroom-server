@@ -1,1 +1,3 @@
 video-react-example/node_modules
+__pycache__
+*.pyc
