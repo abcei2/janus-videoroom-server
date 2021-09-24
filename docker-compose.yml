@@ -1,0 +1,20 @@
+version: '3'
+
+
+services:
+
+  janus:
+    image: canyan/janus-gateway:latest
+    command: ["/usr/local/bin/janus", "-F", "/usr/local/etc/janus"]
+    ports:
+      - "80:80"
+      - "7088:7088"
+      - "8088:8088"
+      - "8188:8188"
+      # - "7089:7089"
+      # - "8089:8089"
+      # - "8889:8889"
+    volumes:
+      - ./etc/janus.jcfg:/usr/local/etc/janus/janus.jcfg
+      - ./etc/janus.plugin.videoroom.jcfg:/usr/local/etc/janus/janus.plugin.videoroom.jcfg
+      - ./etc/janus.transport.http.jcfg:/usr/local/etc/janus/janus.transport.http.jcfg

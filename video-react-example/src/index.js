@@ -7,13 +7,14 @@ import reportWebVitals from './reportWebVitals';
 
 
 
-var janus_webrtc_server='ws://207.246.118.54:8188'
+// var janus_webrtc_server='ws://207.246.118.54:8188'
+var janus_webrtc_server='ws://127.0.0.1:8188'
 ReactDOM.render(
   <React.StrictMode>
     <JanusVideoRoom video_id="video1" audio_id="audio1" token="123456789" room="1234" server={janus_webrtc_server}/>   
-    <JanusVideoRoom video_id="video2" audio_id="audio2" token="123456789" room="1234" server={janus_webrtc_server}/> 
+    {/* <JanusVideoRoom video_id="video2" audio_id="audio2" token="123456789" room="1234" server={janus_webrtc_server}/> 
     <JanusVideoRoom video_id="video3" audio_id="audio3" token="123456789" room="1234" server={janus_webrtc_server}/> 
-    <JanusVideoRoom video_id="video4" audio_id="audio4" token="123456789" room="1234" server={janus_webrtc_server}/>  
+    <JanusVideoRoom video_id="video4" audio_id="audio4" token="123456789" room="1234" server={janus_webrtc_server}/>   */}
   
   </React.StrictMode>,
   document.getElementById('root')
