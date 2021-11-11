@@ -63,7 +63,7 @@ room-1234: {
 	bitrate = 128000
 	fir_freq = 10
 	#audiocodec = "opus"
-	#videocodec = "vp8"
+	videocodec = "h264,h265,vp8,vp9,av1"
 	record = false
 	#rec_dir = "/path/to/recordings-folder"
 }
