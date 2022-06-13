@@ -3,8 +3,10 @@ import json
 import random
 import string
 
-janus_main_http = "http://207.246.118.54:8088/janus"
-janus_admin_http = "http://207.246.118.54:7088/admin"
+# JANUS_IP = '207.246.118.54' # rata
+JANUS_IP = 'localhost' # Macbook
+janus_main_http = f"http://{JANUS_IP}:8088/janus"
+janus_admin_http = f"http://{JANUS_IP}:7088/admin"
 
 letters = string.ascii_lowercase
 def get_rand_transaction():
